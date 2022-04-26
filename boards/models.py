@@ -2,6 +2,8 @@ from email import message
 from django.db import models
 from django.contrib.auth.models import User
 
+# Models represents Entities [or tables] in a DB
+
 class Board(models.Model):
     board_pk = models.IntegerField(primary_key=True)
     name = models.CharField(unique=True, max_length=30)
