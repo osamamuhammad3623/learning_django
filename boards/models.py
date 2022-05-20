@@ -4,6 +4,8 @@ from django.contrib.auth.models import User
 
 # Models represents Entities [or tables] in a DB
 
+# database simple schema: a board consists of many topics, each topic has its comments
+
 class Board(models.Model):
     board_pk = models.IntegerField(primary_key=True)
     name = models.CharField(unique=True, max_length=30)
@@ -19,8 +21,8 @@ class Topic(models.Model):
     # time_created = models.DateTimeField(auto_now_add=True)
 
 
-class Post(models.Model):
-    post_pk = models.IntegerField(primary_key=True)
+class Comment(models.Model):
+    comment_pk = models.IntegerField(primary_key=True)
     message = models.CharField(max_length=150)
     topic = models.ForeignKey(Topic,on_delete=models.CASCADE)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
