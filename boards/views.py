@@ -10,9 +10,7 @@ def home_response(request):
     return render(request, 'home.html', {'boards': boards})
 
 
-def board_topics(request, board_id):
-    selected_board = Board.objects.get(board_pk=board_id)
-    #board_topics = Topic.objects.get(board=selected_board)
-    print(selected_board)
+def board_topics(request, board_name):
+    selected_board = Board.objects.get(name=board_name)
     
     return render(request, 'topics.html', {'board': selected_board.name})

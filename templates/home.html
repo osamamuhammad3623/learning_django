@@ -11,7 +11,7 @@
 <body>
   <div class="container">
     <ol class="breadcrumb my-4">
-      <li class="breadcrumb-item active">Boards</li>
+      <li class="breadcrumb-item active"><a style="text-decoration: none" href="{% url 'boards_home_page' %}" >Boards</a></li>
     </ol>
     <table class="table">
       <thead class="thead-dark">
@@ -24,7 +24,7 @@
       </thead>
         {% for board in boards %}
         <tr>
-          <td>{{board.name}}</td>
+          <td><a style="text-decoration: none" href="{% url 'board_topics' board.name %}" >{{board.name}}</a></td>
           <td>{{board.desc}}</td>
           <td>0</td>
           <td>0</td>
