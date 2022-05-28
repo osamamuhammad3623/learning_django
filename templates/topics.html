@@ -1,19 +1,24 @@
-{% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>{{board}}</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-</head>
-<body>
-  <div class="container">
-    <ol class="breadcrumb my-4">
-      <li class="breadcrumb-item "><a style="text-decoration: none" href="{% url 'boards_home_page' %}" >Boards</a></li>
-        <li class="breadcrumb-item active">{{board}}</li>
-    </ol>
-    </div>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block page_title %} {{ board }} {% endblock %}
+
+{% block breadcrumb_head %}
+<li class="breadcrumb-item "><a style="text-decoration: none" href="{% url 'boards_home_page' %}" >Boards</a></li>
+  <li class="breadcrumb-item active">{{board}}</li>
+{% endblock %}
+
+{% block content %}
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th>Topics</th>
+
+    </tr>
+  </thead>
+    {% for topic in topics %}
+    <tr>
+      <td>{{topic.title}}</td>
+    </tr>
+    {% endfor %}
+  </table>  
+{% endblock %}

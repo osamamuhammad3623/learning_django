@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'discussion_board.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Django_database',
+        'NAME': 'Boards',
         'USER': 'root',
         'PASSWORD': '36231541',
         'HOST': '127.0.0.1', # Localhost

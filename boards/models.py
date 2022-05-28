@@ -14,11 +14,9 @@ class Board(models.Model):
 
 class Topic(models.Model):
     topic_pk = models.IntegerField(primary_key=True)
-    subject: models.CharField(max_length=150)
+    title = models.CharField(max_length=150, null=False)
     board = models.ForeignKey(Board, on_delete=models.CASCADE)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    # to store date & time:
-    # time_created = models.DateTimeField(auto_now_add=True)
 
 
 class Comment(models.Model):
