@@ -9,7 +9,7 @@
 
 {% block content %}
 <table class="table">
-  <thead class="thead-dark">
+  <thead class="thead-inverse">
     <tr>
       <th>Topics</th>
 
@@ -20,5 +20,6 @@
       <td>{{topic.title}}</td>
     </tr>
     {% endfor %}
-  </table>  
+  </table>
+  <a href="{% url 'add_topic' board %}" >Add new Topic</a>
 {% endblock %}
